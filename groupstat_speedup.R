@@ -7,7 +7,7 @@ library("matrixcalc")
 source("./grad_hessian.R")
 source("./what_speedup.R")
 
-
+#lmk
 var_check<-function(Hs, pos, nuisance_pos, what){
   var   = Hs[pos,pos] - t(what)%*%Hs[nuisance_pos,pos]
   eig_var = eigen(var)
@@ -41,7 +41,7 @@ groupstat <- function(x,time,status, groups, task, alternative, coeff, lambdasto
       pos = seq(from = (coi-1)*K+1,to=(coi-1)*K+K,by = 1)  # positions corresponding to group coi
       coi_not_zero = (sum( abs( beta[pos] ) )>1e-10)
       nuisance_pos = setdiff(1:d, pos)
-      beta_undernull=beta
+      beta_undernull=beta 
       beta_undernull[pos] = 0
       #--------------------------------------------------------------------------
       la=derivative[,pos];  lb=derivative[, setdiff(1:d, pos)   ];
